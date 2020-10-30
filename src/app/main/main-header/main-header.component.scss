@@ -1,0 +1,30 @@
+
+.main-header-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 20px;
+    z-index: 100;
+    .site-name-logo {
+        color: white;
+    }
+    
+    .main-nav-items-container {
+        list-style-type: none;
+        .nav-item {
+            display: inline-block;
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .icon-video-player {
+        font-size: 50px;
+    }
+
+    .site-name {
+        height: fit-content;
+        font-size: 25px ;
+    }
+}
