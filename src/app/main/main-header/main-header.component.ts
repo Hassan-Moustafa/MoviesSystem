@@ -10,7 +10,7 @@ export class MainHeaderComponent implements OnInit {
   mainNavItems = [
     {
       title: 'Home',
-      url: ''
+      url: '/home'
     },
     {
       title: 'Movies',

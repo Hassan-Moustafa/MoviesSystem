@@ -2,6 +2,17 @@
 @import './bootstrap.scss';
 @import './style.scss';
 
-html, body {
+// html, body {
+//     height: 100%;
+// }
+
+html, body{
+    padding: 0;
+    margin: 0;
+  }
+  html{
     height: 100%;
-}
+  }
+  body{
+    min-height: 100%;
+  }
