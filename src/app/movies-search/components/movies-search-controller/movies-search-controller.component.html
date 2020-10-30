@@ -1,0 +1,13 @@
+<div class="movies-search-container">
+    <div class="main-banner row mx-0 align-items-center">
+        <div class="banner-content">
+            <h1>Movies List</h1>
+        </div>
+    </div>
+    <div class="movies-list row mx-0">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2" *ngFor="let movie of moviesData">
+            <app-movie-card
+            [movieCardData]= "movie"></app-movie-card>
+        </div>
+    </div>
+</div>

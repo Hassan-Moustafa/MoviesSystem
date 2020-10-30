@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CardsListComponent } from './components/cards-list/cards-list.component';
+import { MovieCardComponent } from './components/cards-list/movie-card/movie-card.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [CardsListComponent, MovieCardComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    NgbModule
   ],
   exports: [
-    CommonModule
+    CommonModule,
+    NgbModule,
+    MovieCardComponent,
   ]  
 })
 export class SharedModule { }

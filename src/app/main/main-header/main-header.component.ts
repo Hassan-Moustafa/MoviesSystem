@@ -14,7 +14,7 @@ export class MainHeaderComponent implements OnInit {
     },
     {
       title: 'Movies',
-      url: ''
+      url: '/movies-search'
     },
     {
       title: 'Celebrities List',

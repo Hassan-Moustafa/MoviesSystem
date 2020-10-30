@@ -1,0 +1,20 @@
+<div class="card-container col-12 px-0"
+    [ngStyle]="{
+        'background-image': 'url(' + movieCardData.image + ')'
+    }">
+
+    <div class="card-info-container">
+        <div class="mainTitle">
+            {{movieCardData.mainTitle}}
+        </div>
+        <div class="subTitle">
+            {{movieCardData.subTitle}}
+        </div>
+        <div class="rating">
+            {{movieCardData.rating}} / 10
+        </div>
+        <div class="visual-rating">
+            <ngb-rating [(rate)]="movieCardData.rating" [readonly] = "true"></ngb-rating>
+        </div>
+    </div>
+</div>

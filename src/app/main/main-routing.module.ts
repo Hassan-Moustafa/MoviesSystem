@@ -11,6 +11,9 @@ const routes: Routes = [
     [
       {
         path: 'home', component: HomeComponent, pathMatch: 'exact'
+      },
+      {
+        path: 'movies-search', loadChildren: () => import('../movies-search/movies-search.module').then((m) => m.MoviesSearchModule)
       }
     ]
   },
