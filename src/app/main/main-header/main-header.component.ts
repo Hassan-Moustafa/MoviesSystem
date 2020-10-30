@@ -13,7 +13,7 @@ export class MainHeaderComponent implements OnInit {
       url: '/home'
     },
     {
-      title: 'Movies',
+      title: 'Popular Movies',
       url: '/movies-search'
     },
     {

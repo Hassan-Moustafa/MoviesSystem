@@ -24,49 +24,17 @@
     }
 }
 
-::ng-deep {
-    .page-item {
-        margin: 0 5px;
-        .page-link {
-            width: 50px;
-            height: 50px;
-            color: #9352b3;
-            display: flex;
-            align-items: center;
-            font-size: 14px;
-            font-weight: 400;
-            justify-content: center;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            border-radius: 50%;
-            border: 0;
-
-            &:hover {
-                background: #e7edef;
-                color: #9352b3;
-            }
-
-            &:focus {
-                box-shadow: none;
-            }
-
-        }
-        &.active {
-            .page-link {
-                background: #9352b3;
-                &:hover {
-                    color: white;
-                }
-            }
-        }
+.no-data-found-container {
+    text-align: center;
+    margin: 20px;
+    .icon-error {
+        margin: 15px;
+        font-size: 50px;
+        color: red;
     }
 
-    @media screen and (max-width: 670px) {
-        .page-item {
-            .page-link {
-                width: 30px;
-                height: 30px;
-            }
-        }
+    .error-msg {
+        height: fit-content;
+        font-size: 28px;
     }
 }

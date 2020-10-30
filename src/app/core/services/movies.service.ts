@@ -18,4 +18,15 @@ export class MoviesService {
       params
     });
   }
+
+  searchForMovie(query: string, pageNumber: number = 1) {
+    const url = this.configService.baseUrl + '/search/movie';
+    let params = new HttpParams();
+    params = params.append('query', query);
+    params = params.append('page', pageNumber.toString());
+
+    return this.http.get(url, {
+      params
+    });
+  }
 }

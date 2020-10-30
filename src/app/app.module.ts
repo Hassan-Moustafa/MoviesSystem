@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ConfigService } from './core/services/config.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InterceptorService } from './core/services/interceptor.service';
+import { FormsModule } from '@angular/forms';
 
 const loadConfigurations = (configService: ConfigService) => {
   return () => configService.loadConfig()
@@ -23,6 +24,7 @@ const loadConfigurations = (configService: ConfigService) => {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     NgbModule
   ],
   providers: [

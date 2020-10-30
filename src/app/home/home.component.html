@@ -12,9 +12,10 @@
                 <input 
                     type="text" 
                     class="form-control"
-                    placeholder="Search for Movies">
+                    placeholder="Search for Movies"
+                    [(ngModel)]= "searchValue">
                 <div class="input-group-append">
-                    <span class="input-group-text search-btn" id="basic-addon2">
+                    <span class="input-group-text search-btn" id="basic-addon2" (click)="search()">
                         <span class="icon-search"></span>
                     </span>
                 </div>

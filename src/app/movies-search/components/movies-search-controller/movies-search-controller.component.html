@@ -1,23 +1,23 @@
 <div class="movies-search-container">
     <div class="main-banner row mx-0 align-items-center">
         <div class="banner-content">
-            <h1>Movies List</h1>
+            <h1 *ngIf="!movieName">Popular Movies List</h1>
+            <h1 *ngIf="movieName">Search results for: {{movieName}}</h1>
         </div>
     </div>
-    <div class="movies-list row mx-0">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2 px-2" *ngFor="let movie of moviesData">
-            <app-movie-card
-            [movieCardData]= "movie"></app-movie-card>
-        </div>
+
+    <div class="movies-list" *ngIf="moviesPagedList && moviesPagedList.results.length > 0">
+        <app-movies-list 
+            [moviesData]="moviesData"
+            [currentPage]="currentPage"
+            [pageSize]= "moviesPagedList.total_results / moviesPagedList.total_pages"
+            [totalRecords]= "moviesPagedList.total_results"
+            (pageChanged)= "onPageChange($event)"></app-movies-list>
     </div>
-    <div class="pagination justify-content-center" *ngIf="moviesPagedList">
-        <ngb-pagination 
-            [collectionSize]="moviesPagedList.total_results"
-            [pageSize] = "moviesPagedList.total_results / moviesPagedList.total_pages"
-            [(page)]="currentPage" 
-            [boundaryLinks]="true"
-            [maxSize]="paginationMaxSize"
-            (pageChange)= "onPageChange($event)"
-            aria-label="Default pagination"></ngb-pagination>
+    
+    <div class="no-data-found-container row mx-0 justify-content-center align-items-center"  *ngIf="!isLoading && !moviesPagedList || (moviesPagedList && moviesPagedList.results.length === 0)">
+        <span class="icon-error col-auto px-0"></span>
+        <span class="error-msg col-auto">No data found</span>
     </div>
+
 </div>
