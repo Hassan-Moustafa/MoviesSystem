@@ -1,0 +1,38 @@
+<div class="movie-detail-controller">
+    <div class="main-banner row mx-0 align-items-center"
+        *ngIf="movieData"
+        [ngStyle]= "{
+            'background-image': 'url(' +  movieData.poster_path + ')'
+        }">
+
+        <div class="banner-content row mx-0">
+            <div class="col-12 col-md-6 px-0">
+                <img class="movie-poster" [src]="movieData.poster_path" alt="">
+            </div>
+            <div class="col-12 col-md-6 row mx-0 align-content-start justify-content-center justify-content-md-start mt-4 mt-md-0">
+                <div class="movie-title col-12">
+                    <h2>
+                        {{movieData.title}}
+                    </h2>
+                </div>
+                <div class="genres-list col-auto">
+                    <ul>
+                        <li *ngFor="let genre of movieData.genres">
+                            {{genre.name}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="movie-release-data col-auto">
+                    {{movieData.release_date}}
+                </div>
+                <div class="rating col-12 text-md-left">
+                    <ngb-rating class="visual-rating" [(rate)]="movieData.vote_average" [readonly] = "true"></ngb-rating>
+                    <span class="mx-2">
+                        {{movieData.vote_average}} / 10
+                    </span> 
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

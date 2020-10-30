@@ -29,4 +29,13 @@ export class MoviesService {
       params
     });
   }
+
+  getMovieDetailsById(id: number) {
+    const url = this.configService.baseUrl + `/movie/${id}`;
+    return this.http.get(url);
+  }
+
+  getMoviePosterUrl() {
+    return this.configService.moviePosterBaseUrl;
+  }
 }

@@ -48,7 +48,7 @@ export class MoviesSearchControllerComponent implements OnInit {
     this.moviesData = [];
     response.results.forEach((item: IPopularMovieResponse) => {
       this.moviesData.push({
-        image: `https://image.tmdb.org/t/p/w300/${item.poster_path}`,
+        image: `${this.moviesService.getMoviePosterUrl()}${item.poster_path}`,
         mainTitle: item.title,
         subTitle: item.release_date,
         rating: item.vote_average.toString()
