@@ -29,6 +29,7 @@ export class MovieDetailControllerComponent implements OnInit {
         (res: IPopularMovieResponse) => {
           this.movieData = res;
           this.movieData.poster_path = this.moviesService.getMoviePosterUrl() + this.movieData.poster_path;
+          this.movieData.backdrop_path = this.moviesService.getMoviePosterUrl() + this.movieData.backdrop_path;
           console.log(this.movieData);
         },
         (error) => {

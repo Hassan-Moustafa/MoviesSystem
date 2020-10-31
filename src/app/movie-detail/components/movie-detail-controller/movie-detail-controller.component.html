@@ -1,8 +1,7 @@
-<div class="movie-detail-controller">
+<div class="movie-detail-controller" *ngIf="movieData">
     <div class="main-banner row mx-0 align-items-center"
-        *ngIf="movieData"
         [ngStyle]= "{
-            'background-image': 'url(' +  movieData.poster_path + ')'
+            'background-image': 'url(' +  movieData.backdrop_path + ')'
         }">
 
         <div class="banner-content row mx-0">
@@ -34,5 +33,14 @@
             </div>
 
         </div>
+    </div>
+    <div class="row mx-0 movie-additional-details-container">
+        <section class="col-6 story-line-section">
+            <h2 class="story-line-title">
+                StoryLine
+            </h2>
+            <p class="story-content">{{movieData.overview}}</p>
+        </section>
+        <div class="col-6"></div>
     </div>
 </div>

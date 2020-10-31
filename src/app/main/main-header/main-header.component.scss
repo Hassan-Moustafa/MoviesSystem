@@ -1,10 +1,12 @@
 
 .main-header-container {
-    position: fixed;
+    position: relative;
     top: 0;
     width: 100%;
-    margin-top: 20px;
+    // margin-top: 20px;
     z-index: 1000;
+    // background-color: blue;
+    height: 50px;
     .site-name-logo {
         color: white;
     }
@@ -26,5 +28,59 @@
     .site-name {
         height: fit-content;
         font-size: 25px ;
+    }
+}
+
+.navbar {
+    
+    transition: background 1s;
+
+    .icon-menu {
+        color: white;
+    }
+
+    .navbar-toggler {
+        border: 0;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .navbar-collapse {
+        flex-grow: unset;
+    }
+
+    .navbar-collapse {
+        &.opened {
+            display: block;
+        }
+    
+        &.closed {
+            display: none;
+        }
+    }
+    
+    .navbar-brand {
+        display: flex;
+        color: white;
+        &:hover {
+            color: white;
+            text-decoration: none;
+        }
+    }
+    
+    .navbar-nav {
+        .nav-link {
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    &.opened {
+        background: #212529;
+    }
+
+    &.closed {
+        background: transparent;
     }
 }

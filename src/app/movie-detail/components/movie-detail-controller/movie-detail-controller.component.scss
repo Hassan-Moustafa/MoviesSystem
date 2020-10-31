@@ -15,9 +15,10 @@
     }
 
     .banner-content {
-        position: absolute;
+        position: relative;
         width: 100%;
-        top: 50%;
+        // top: 30%;
+        margin-top: 30%;
         z-index: 100;
         color: white;
         text-align: center; 
@@ -57,6 +58,10 @@
             color: rgb(255, 230, 0);
         }
     }
+}
+
+.movie-additional-details-container {
+    margin-top: 17%;
 }
 
 .movie-title {
