@@ -1,0 +1,16 @@
+<div class="movie-cast-list-container col-12 px-0 row justify-content-center" *ngIf="movieCastList">
+    <div class="col-12">
+        <h2 class="cast-title">Cast</h2>
+    </div>
+    <div class="col-auto mt-3" *ngFor="let item of movieCastList">
+        <div class="col-12">
+            <img 
+                class="person-profile-image" 
+                [src]="getProfileImageUrl(item.profile_path)" 
+                [alt]="item.name">
+        </div>
+        <div class="col-12 person-name" >
+            {{item.name}}
+        </div>
+    </div>
+</div>

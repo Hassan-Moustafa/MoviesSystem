@@ -27,12 +27,14 @@
                     color: white;
                     opacity: 1;
                     animation: opacity-animation 2.5s;
+                    font-family: 'QuickSand-Bold';
                 }
             }
 
             .search-input {
                 box-shadow: 0 0 15px 3px #00000094;
                 padding: 0;
+                font-family: 'QuickSand-Regular';
                 .search-btn {
                     background-color: #9352b3;
                     width: 100px;
@@ -58,4 +60,12 @@
 @keyframes opacity-animation {
     from {opacity: 0;}
     to {opacity: 1;}
-  }
+}
+
+@media screen and (max-width: 400px) {
+    .slogan {
+        h1 {
+            font-size: 30px;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<div class="movie-detail-summary-container">
+    <h2>Details</h2>
+    <div class="row mx-0 justify-content-between single-info" *ngFor="let item of detailsShown">
+        <div class="col-auto px-0 key">{{item.displayText}}</div>
+        <div class="col-auto px-0 value">
+            {{item.getValue ? item.getValue(movieData) : movieData[item.propName]}}
+        </div>
+    </div>
+</div>

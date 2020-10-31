@@ -2,8 +2,7 @@
     'background-image': 'url(' +  movieData.backdrop_path + ')'
 }" -->
 <div class="movie-detail-controller" *ngIf="movieData">
-    <div class="main-banner row mx-0 align-items-center"
-        >
+    <div class="main-banner row mx-0 align-items-center">
         <img class="movie-bacdrop-image" [src]="movieData.backdrop_path" alt="">
         <div class="banner-content row mx-0 mx-md-5">
             <div class="col-12 col-md-6 col-lg-auto px-0 px-md-4">
@@ -35,13 +34,20 @@
 
         </div>
     </div>
-    <div class="row mx-0 movie-additional-details-container">
-        <section class="col-6 story-line-section">
+    <div class="row mx-0 movie-additional-details-container px-0 px-sm-5 mt-4 align-items-baseline">
+        <section class="col-12 col-md-6 story-line-section">
             <h2 class="story-line-title">
                 StoryLine
             </h2>
             <p class="story-content">{{movieData.overview}}</p>
         </section>
-        <div class="col-6"></div>
+        <section class="col-12 col-md-6 movie-detail-summary-section">
+            <app-movie-detail-summary [movieData]="movieData"></app-movie-detail-summary>
+        </section>
+        <section class="col-12" *ngIf="movieCredits">
+            <app-movie-cast-list
+                [movieCastList]="movieCredits.cast">
+            </app-movie-cast-list>
+        </section>
     </div>
 </div>

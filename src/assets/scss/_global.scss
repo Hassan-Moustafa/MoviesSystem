@@ -16,3 +16,23 @@ html, body{
   body{
     min-height: 100%;
   }
+
+@font-face {
+  font-family: QuickSand-Regular;
+  src: url('../scss/fonts/Quicksand-Regular.ttf');
+}
+
+@font-face {
+  font-family: QuickSand-Medium;
+  src: url('../scss/fonts/Quicksand-Medium.ttf');
+}
+
+@font-face {
+  font-family: QuickSand-SemiBold;
+  src: url('../scss/fonts/Quicksand-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: QuickSand-Bold;
+  src: url('../scss/fonts/Quicksand-Bold.ttf');
+}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from 'src/app/core/services/movies.service';
 import { IPopularMovieResponse } from 'src/app/movies-search/interfaces/popular-movie-response.interface';
+import { IMovieCredits } from 'src/app/shared/interfaces/movie-credits.interface';
 
 @Component({
   selector: 'app-movie-detail-controller',
@@ -10,7 +11,9 @@ import { IPopularMovieResponse } from 'src/app/movies-search/interfaces/popular-
 })
 export class MovieDetailControllerComponent implements OnInit {
 
+  movieId: number;
   movieData: IPopularMovieResponse;
+  movieCredits: IMovieCredits;
 
   constructor(
     private activatedRoute: ActivatedRoute, 
@@ -19,11 +22,13 @@ export class MovieDetailControllerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getMovieData();
+    this.movieId = this.activatedRoute.snapshot.params['id'];
+    this.getMovieData(this.movieId);
+    this.getMovieCredits(this.movieId);
   }
 
-  getMovieData() {
-    let movieId = this.activatedRoute.snapshot.params['id'];
+  getMovieData(movieId: number) {
+    
     if(movieId) {
       this.moviesService.getMovieDetailsById(movieId).subscribe(
         (res: IPopularMovieResponse) => {
@@ -40,6 +45,18 @@ export class MovieDetailControllerComponent implements OnInit {
       this.router.navigate(['../'], { relativeTo: this.activatedRoute });
     }
 
+  }
+
+  getMovieCredits(movieId: number) {
+    this.moviesService.getMovieCredits(movieId).subscribe(
+      (res: IMovieCredits) => {
+        this.movieCredits = res;
+        console.log(this.movieCredits);
+      },
+      (error) => {
+
+      }
+    );
   }
 
 

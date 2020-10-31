@@ -63,6 +63,8 @@
     .navbar-brand {
         display: flex;
         color: white;
+        font-family: 'QuickSand-Bold';
+        text-transform: uppercase;
         &:hover {
             color: white;
             text-decoration: none;
@@ -73,6 +75,7 @@
         .nav-link {
             color: white;
             cursor: pointer;
+            font-family: 'QuickSand-SemiBold';
         }
     }
 
@@ -82,5 +85,15 @@
 
     &.closed {
         background: transparent;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .site-name {
+        font-size: 18px !important;
+    }
+
+    .navbar-brand, .navbar-collapse  {
+        padding: 0;
     }
 }

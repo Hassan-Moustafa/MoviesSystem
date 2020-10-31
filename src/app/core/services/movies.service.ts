@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { ConfigService } from './config.service';
+import { Observable } from 'rxjs';
+import { IMovieCredits } from 'src/app/shared/interfaces/movie-credits.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -30,8 +32,13 @@ export class MoviesService {
     });
   }
 
-  getMovieDetailsById(id: number) {
-    const url = this.configService.baseUrl + `/movie/${id}`;
+  getMovieDetailsById(movieId: number) {
+    const url = this.configService.baseUrl + `/movie/${movieId}`;
+    return this.http.get(url);
+  }
+
+  getMovieCredits(movieId: number) {
+    const url = this.configService.baseUrl + `/movie/${movieId}/credits`;
     return this.http.get(url);
   }
 

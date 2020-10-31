@@ -1,7 +1,5 @@
 .main-banner {
-    // background-image: url('../../../../assets/images/popcorn.jpg');
     background-repeat: no-repeat;
-    // height: 90vh;
     background-size: cover;
     position: relative;
     background-position: center;
@@ -30,7 +28,7 @@
         margin-top: 45vh;
         z-index: 100;
         color: white;
-        text-align: center; 
+        text-align: center;
 
         .movie-poster {
             box-shadow: 0 0 10px 3px #5d5a5aa8;
@@ -38,10 +36,22 @@
             // width: 80%;
         }
 
+        .movie-title {
+            h2 {
+                text-align: left;
+                font-family: 'QuickSand-Bold';
+            }
+        }
+
+        .movie-release-data {
+            font-family: 'QuickSand-Regular';
+        }
+
         .genres-list {
             display: inline-block;
             border-right: 1px solid gainsboro;
             height: fit-content;
+            font-family: 'QuickSand-Regular';
             ul {
                 list-style-type: none;
                 text-align: left;
@@ -65,17 +75,21 @@
 
         .visual-rating {
             color: rgb(255, 230, 0);
+            font-family: 'QuickSand-Regular';
         }
     }
 }
 
 .movie-additional-details-container {
-    // margin-top: 20vh;
-}
+    
+    .story-line-title {
+        font-family: 'QuickSand-Bold';
+    }
 
-.movie-title {
-    h2 {
-        text-align: left;
+    .movie-detail-summary-section, .story-line-section {
+        height: fit-content;
+        padding: 10px;
+        font-family: 'QuickSand-Regular';
     }
 }
 
@@ -84,7 +98,7 @@
         color: black;
         text-align: center;
         h2 {
-            text-align: center;
+            text-align: center !important;
         }
     }
 }
