@@ -1,14 +1,15 @@
+<!-- [ngStyle]= "{
+    'background-image': 'url(' +  movieData.backdrop_path + ')'
+}" -->
 <div class="movie-detail-controller" *ngIf="movieData">
     <div class="main-banner row mx-0 align-items-center"
-        [ngStyle]= "{
-            'background-image': 'url(' +  movieData.backdrop_path + ')'
-        }">
-
-        <div class="banner-content row mx-0">
-            <div class="col-12 col-md-auto px-0 px-md-4">
+        >
+        <img class="movie-bacdrop-image" [src]="movieData.backdrop_path" alt="">
+        <div class="banner-content row mx-0 mx-md-5">
+            <div class="col-12 col-md-6 col-lg-auto px-0 px-md-4">
                 <img class="movie-poster" [src]="movieData.poster_path" alt="">
             </div>
-            <div class="col-12 col-md-6 row mx-0 align-content-start justify-content-center justify-content-md-start mt-4 mt-md-0">
+            <div class="col-12 col-md-6 col-lg-6 row mx-0 align-content-start justify-content-center justify-content-md-start mt-4 mt-md-0">
                 <div class="movie-title col-12">
                     <h2>
                         {{movieData.title}}

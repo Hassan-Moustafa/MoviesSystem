@@ -3,4 +3,5 @@ export interface IMovieCardData {
     mainTitle: string;
     subTitle: string;
     rating: string;
+    id?: any;
 }

@@ -1,5 +1,8 @@
 <div class="movies-list row mx-0 my-2">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-2 px-2" *ngFor="let movie of moviesData">
+    <div 
+        class="col-12 col-sm-6 col-md-4 col-lg-3 my-2 px-2" 
+        *ngFor="let movie of moviesData"
+        (click)="onClick(movie)">
         <app-movie-card
         [movieCardData]= "movie"></app-movie-card>
     </div>

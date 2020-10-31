@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener, Input, Output, EventEmitter } from '@angular/core';
 import { IMovieCardData } from 'src/app/shared/interfaces/movie-card-data.interface';
+import { EventManager } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movies-list',
@@ -13,6 +14,7 @@ export class MoviesListComponent implements OnInit {
   @Input() pageSize: number;
   @Input() totalRecords: number;
   @Output() pageChanged = new EventEmitter<number>();
+  @Output() itemClicked = new EventEmitter<IMovieCardData>();
 
   paginationMaxSize = 5;
 
@@ -32,6 +34,10 @@ export class MoviesListComponent implements OnInit {
 
   onPageChange(pageNumber: number) {
     this.pageChanged.emit(pageNumber);
+  }
+
+  onClick(movie: IMovieCardData) {
+    this.itemClicked.emit(movie);
   }
 
 }
