@@ -21,6 +21,7 @@
         color: white;
         text-align: center;
         font-family: 'QuickSand-Bold';
+        font-size: 45px;
         
     }
 }
@@ -37,5 +38,11 @@
     .error-msg {
         height: fit-content;
         font-size: 28px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .banner-content {
+        font-size: 30px !important;
     }
 }

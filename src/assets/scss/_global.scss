@@ -36,3 +36,12 @@ html, body{
   font-family: QuickSand-Bold;
   src: url('../scss/fonts/Quicksand-Bold.ttf');
 }
+
+.mat-simple-snackbar{
+  font-family: 'QuickSand-Regular';
+}
+
+.error {
+  color: white;
+  background: #ba0000;
+}

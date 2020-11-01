@@ -20,16 +20,13 @@ export class MoviesListComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    if(window.innerWidth < 450) {
-      this.paginationMaxSize = 2;
-    } else {
-      this.paginationMaxSize = 5;
-    }
+    this.handlePaginationMaxSize();
   }
   
   constructor() { }
 
   ngOnInit(): void {
+    this.handlePaginationMaxSize();
   }
 
   onPageChange(pageNumber: number) {
@@ -38,6 +35,14 @@ export class MoviesListComponent implements OnInit {
 
   onClick(movie: IMovieCardData) {
     this.itemClicked.emit(movie);
+  }
+
+  handlePaginationMaxSize() {
+    if(window.innerWidth < 450) {
+      this.paginationMaxSize = 2;
+    } else {
+      this.paginationMaxSize = 5;
+    }
   }
 
 }

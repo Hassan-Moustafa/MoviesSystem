@@ -10,10 +10,22 @@ import { ConfigService } from 'src/app/core/services/config.service';
 export class MovieCastListComponent implements OnInit {
 
   @Input() movieCastList: ICreditsCast[];
-  
+  filteredMovieCastList: ICreditsCast[] = [];
   constructor(private configService: ConfigService) { }
 
   ngOnInit(): void {
+    this.filterCastList(10);
+  }
+
+  /**
+   * 
+   * @param limit
+   * Get first Nth elements in the cast array and render them.
+   */
+  filterCastList(limit: number) {
+    this.movieCastList.slice(0, limit).map((item, i) => {
+      this.filteredMovieCastList.push(item);
+    });
   }
 
   getProfileImageUrl(profilePath: string) {

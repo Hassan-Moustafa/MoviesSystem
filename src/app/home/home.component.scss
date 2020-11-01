@@ -28,6 +28,7 @@
                     opacity: 1;
                     animation: opacity-animation 2.5s;
                     font-family: 'QuickSand-Bold';
+                    font-size: 45px;
                 }
             }
 
@@ -63,9 +64,13 @@
 }
 
 @media screen and (max-width: 400px) {
+    .home-banner {
+        background-position: center;
+    }
+    
     .slogan {
         h1 {
-            font-size: 30px;
+            font-size: 30px !important;
         }
     }
 }

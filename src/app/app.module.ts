@@ -9,6 +9,8 @@ import { ConfigService } from './core/services/config.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InterceptorService } from './core/services/interceptor.service';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 const loadConfigurations = (configService: ConfigService) => {
   return () => configService.loadConfig()
@@ -25,7 +27,9 @@ const loadConfigurations = (configService: ConfigService) => {
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [
     {
@@ -38,7 +42,7 @@ const loadConfigurations = (configService: ConfigService) => {
       provide: HTTP_INTERCEPTORS, 
       useClass: InterceptorService, 
       multi: true
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })

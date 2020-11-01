@@ -31,15 +31,18 @@ export class MoviesSearchControllerComponent implements OnInit {
   }
 
   getMoviesList() {
-    let movieName = this.activatedRoute.snapshot.queryParams['movieName'];
-    this.uiService.setSpinnerStatus(true);
-    this.isLoading = true;
-    if(movieName) {
-      this.movieName = movieName;
-      this.searchForMovies(movieName);
-    } else {
-      this.getPopularMovies();
+    this.activatedRoute.queryParams.subscribe((queryParams) => {
+      let movieName = queryParams['movieName'];
+      this.uiService.setSpinnerStatus(true);
+      this.isLoading = true;
+      if(movieName) {
+        this.movieName = movieName;
+        this.searchForMovies(movieName);
+      } else {
+        this.movieName = '';
+        this.getPopularMovies();
     }
+    })
   }
 
   handleRetrievedMovies(response: IPagedListResult) {
