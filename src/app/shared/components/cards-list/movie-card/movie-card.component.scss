@@ -5,6 +5,7 @@
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+    cursor: pointer;
 
 
     &:after {
@@ -54,6 +55,10 @@
             .visual-rating {
                 top: 15px;
             }
+
+            .details-btn {
+                opacity: 1;
+            }
         }
 
         .mainTitle, .subTitle, .rating, .visual-rating {
@@ -89,6 +94,29 @@
 
         .visual-rating {
             color: rgb(255, 230, 0);
+        }
+
+        .details-btn {
+            opacity: 0;
+            background-color: #9352b3;
+            color: white;
+            transition: all 0.5s;
+            border-radius: 50%;
+            width: fit-content;
+            padding: 20px 14px;
+            font-family: 'QuickSand-SemiBold';
+            margin: 0 auto;
+            top: 40%;
+            &:hover {
+                -webkit-transform: scale(1.05);
+                -moz-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                -o-transform: scale(1.05);
+                transform: scale(1.05);
+                -webkit-box-shadow: 0 0 0 10px rgba(147, 82, 179, .4);
+                -moz-box-shadow: 0 0 0 10px rgba(147, 82, 179, .4);
+                box-shadow: 0 0 0 10px rgba(147, 82, 179, .4);
+            }
         }
     }
 }
