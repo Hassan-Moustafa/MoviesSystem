@@ -19,8 +19,7 @@ const loadConfigurations = (configService: ConfigService) => {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

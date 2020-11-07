@@ -1,0 +1,13 @@
+<div class="search-input input-group">
+    <input 
+        type="text" 
+        class="form-control"
+        [placeholder]="placeholder"
+        [(ngModel)]="inputValue"
+        [maxlength]="inputMaxLength">
+    <div class="input-group-append">
+        <span class="input-group-text search-btn" id="basic-addon2" (click)="search()">
+            <span class="icon-search"></span>
+        </span>
+    </div>
+</div>

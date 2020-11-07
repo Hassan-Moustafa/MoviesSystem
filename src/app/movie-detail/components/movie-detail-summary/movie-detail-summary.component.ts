@@ -12,15 +12,24 @@ export class MovieDetailSummaryComponent implements OnInit {
   detailsShown = [
     {
       displayText: 'Release Date',
-      propName: 'release_date'
+      propName: 'release_date',
+      getValue(item: IPopularMovieResponse) {
+        return item.release_date ? item.release_date : '---'
+      }
     },
     {
       displayText: 'Vote Average',
-      propName: 'vote_average'
+      propName: 'vote_average',
+      getValue(item: IPopularMovieResponse) {
+        return item.vote_average ? item.vote_average : '---'
+      }
     },
     {
       displayText: 'Vote Count',
-      propName: 'vote_count'
+      propName: 'vote_count',
+      getValue(item: IPopularMovieResponse) {
+        return item.vote_count ? item.vote_count : '---'
+      }
     },
     {
       displayText: 'Adult',

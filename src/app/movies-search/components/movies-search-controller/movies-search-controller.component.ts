@@ -17,6 +17,10 @@ export class MoviesSearchControllerComponent implements OnInit {
   moviesPagedList: IPagedListResult;
   movieName: string;
   isLoading = false;
+  searchValue: string = '';
+
+  maxStringLength: number = 30;
+
   
 
 
@@ -45,6 +49,10 @@ export class MoviesSearchControllerComponent implements OnInit {
     })
   }
 
+  getDefaultMoviePosterImage () {
+    return '../../../../assets/images/poster-placeholder.png';
+  }
+
   handleRetrievedMovies(response: IPagedListResult) {
     this.uiService.setSpinnerStatus(false);
     this.isLoading = false;
@@ -53,7 +61,7 @@ export class MoviesSearchControllerComponent implements OnInit {
     response.results.forEach((item: IPopularMovieResponse) => {
       this.moviesData.push({
         id: item.id,
-        image: `${this.moviesService.getMoviePosterUrl()}${item.poster_path}`,
+        image: item.poster_path ? `${this.moviesService.getMoviePosterUrl()}${item.poster_path}` : this.getDefaultMoviePosterImage(),
         mainTitle: item.title,
         subTitle: item.release_date,
         rating: item.vote_average.toString()
@@ -86,6 +94,19 @@ export class MoviesSearchControllerComponent implements OnInit {
 
   onMovieItemSelection(selectedMovie: IMovieCardData) {
     this.router.navigate(['../', 'movie-detail', selectedMovie.id], {relativeTo: this.activatedRoute});
+  }
+
+  search() {
+    if(this.movieName.length > this.maxStringLength) {
+      this.uiService.showSnackBar(`Movie name cannot exceed ${this.maxStringLength} character`, 'error')
+    } else {
+      this.router.navigate(['./movies-search'], 
+      { 
+        queryParams: {
+          movieName: this.movieName
+        }
+      });
+    }
   }
 
 }

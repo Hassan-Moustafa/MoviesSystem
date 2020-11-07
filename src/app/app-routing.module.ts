@@ -4,14 +4,16 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '', loadChildren: () => import('./main/main.module').then(m => m.MainModule)
-  }
+  },
 ]
 
 
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      useHash: true
+    })
   ],
   exports: [RouterModule]
 })

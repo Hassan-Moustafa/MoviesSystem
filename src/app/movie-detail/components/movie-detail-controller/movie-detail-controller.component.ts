@@ -29,14 +29,18 @@ export class MovieDetailControllerComponent implements OnInit {
     this.getMovieCredits(this.movieId);
   }
 
+  getDefaultMoviePoster() {
+    return '../../../../assets/images/poster-placeholder.png';
+  }
+
   getMovieData(movieId: number) {
     
     if(movieId) {
       this.moviesService.getMovieDetailsById(movieId).subscribe(
         (res: IPopularMovieResponse) => {
           this.movieData = res;
-          this.movieData.poster_path = this.moviesService.getMoviePosterUrl() + this.movieData.poster_path;
-          this.movieData.backdrop_path = this.moviesService.getMoviePosterUrl() + this.movieData.backdrop_path;
+          this.movieData.poster_path = this.movieData.poster_path ? (this.moviesService.getMoviePosterUrl() + this.movieData.poster_path) : this.getDefaultMoviePoster();
+          this.movieData.backdrop_path = this.movieData.backdrop_path ? (this.moviesService.getMoviePosterUrl() + this.movieData.backdrop_path): null;
         },
         (error) => {
           this.uiService.showSnackBar(error, 'error');
@@ -53,7 +57,6 @@ export class MovieDetailControllerComponent implements OnInit {
     this.moviesService.getMovieCredits(movieId).subscribe(
       (res: IMovieCredits) => {
         this.movieCredits = res;
-        console.log(this.movieCredits);
       },
       (error) => {
 

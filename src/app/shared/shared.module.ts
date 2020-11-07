@@ -6,15 +6,22 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 
 @NgModule({
-  declarations: [CardsListComponent, MovieCardComponent, SpinnerComponent],
+  declarations: [
+      CardsListComponent, 
+      MovieCardComponent, 
+      SpinnerComponent, 
+      SearchBarComponent
+  ],
   imports: [
     CommonModule,
     NgbModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule
   ],
   exports: [
     CommonModule,
@@ -22,7 +29,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     FormsModule,
     MatSnackBarModule,
     MovieCardComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SearchBarComponent
   ]  
 })
 export class SharedModule { }

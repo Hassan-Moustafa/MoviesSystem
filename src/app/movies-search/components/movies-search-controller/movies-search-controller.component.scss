@@ -22,6 +22,12 @@
         text-align: center;
         font-family: 'QuickSand-Bold';
         font-size: 45px;
+
+        .search-keywords {
+            line-height: 1;
+            padding: 0 10px;
+            word-break: break-all;
+        }
         
     }
 }
@@ -41,8 +47,39 @@
     }
 }
 
+::ng-deep {
+    .movies-search-container {
+        .search-input {
+            box-shadow: none !important;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner-content {
+        .search-keywords {
+            font-size: 25px;
+        }
+    }
+}
+
 @media screen and (max-width:400px) {
     .banner-content {
         font-size: 30px !important;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1600px){
+    .movies-list {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (min-width: 1600px){
+    .movies-list {
+        width: 70%;
+        margin: 0 auto;
     }
 }

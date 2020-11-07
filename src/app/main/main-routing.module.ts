@@ -17,6 +17,10 @@ const routes: Routes = [
       },
       {
         path: 'movie-detail/:id', loadChildren: () => import('../movie-detail/movie-detail.module').then((m) => m.MovieDetailModule)
+      },
+      {
+        path: '**',
+        redirectTo: '/home'
       }
     ]
   },

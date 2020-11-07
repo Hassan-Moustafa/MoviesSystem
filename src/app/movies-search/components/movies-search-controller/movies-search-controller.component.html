@@ -2,11 +2,20 @@
     <div class="main-banner row mx-0 align-items-center">
         <div class="banner-content">
             <p *ngIf="!movieName">Popular Movies</p>
-            <p *ngIf="movieName">Search results for: {{movieName}}</p>
+            <p class="search-keywords" *ngIf="movieName">Search results for: {{movieName}}</p>
         </div>
     </div>
-
-    <div class="movies-list" *ngIf="moviesPagedList && moviesPagedList.results.length > 0">
+    <div class="row mx-0 my-5 justify-content-center" *ngIf="movieName">
+        <div class="col-12 col-lg-6">
+            <app-search-bar
+                placeholder = 'Search for movies'
+                [(ngModel)]="movieName"
+                [inputMaxLength]="maxStringLength"
+                (onSearch)="search($event)">
+            </app-search-bar>
+        </div>
+    </div>
+    <div class="movies-list px-2" *ngIf="moviesPagedList && moviesPagedList.results.length > 0">
         <app-movies-list 
             [moviesData]="moviesData"
             [currentPage]="currentPage"

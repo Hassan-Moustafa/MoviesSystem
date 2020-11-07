@@ -34,6 +34,7 @@
             box-shadow: 0 0 10px 3px #5d5a5aa8;
             object-fit: cover;
             // width: 80%;
+            max-width: 300px;
         }
 
         .movie-title {
@@ -80,7 +81,7 @@
 }
 
 .movie-additional-details-container {
-    
+    margin: 0;
     .story-line-title {
         font-family: 'QuickSand-Bold';
     }
@@ -105,5 +106,20 @@
 @media screen and (max-width: 400px) {
     .movie-poster {
         width: 95%;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1600px){
+    .movie-additional-details-container {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (min-width: 1600px){
+    .movie-additional-details-container {
+        width: 70%;
+        margin: 0 auto;
     }
 }

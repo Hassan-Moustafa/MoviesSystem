@@ -8,23 +8,13 @@
                     Start Watching Now
                 </h1>
             </div>
-            <div class="search-input col-12 col-sm-10 col-md-6 px-2 px-sm-0 input-group">
-                <input 
-                    type="text" 
-                    class="form-control"
-                    placeholder="Search for Movies"
-                    [(ngModel)]= "searchValue">
-                <div class="input-group-append">
-                    <span class="input-group-text search-btn" id="basic-addon2" (click)="search()">
-                        <span class="icon-search"></span>
-                    </span>
-                </div>
+            <div class="col-12 col-sm-10 col-md-6 px-2 px-sm-0">
+                <app-search-bar
+                    placeholder = 'Search for movies'
+                    [(ngModel)]="searchValue"
+                    (onSearch)="search()">
+                </app-search-bar>
             </div>
         </div>
     </div>
-    <!-- <div>
-        ;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, amet minus suscipit harum veritatis distinctio ea, dicta perspiciatis cum culpa inventore, excepturi sapiente. Aperiam soluta et molestiae laborum, rerum magni?
-        ;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, amet minus suscipit harum veritatis distinctio ea, dicta perspiciatis cum culpa inventore, excepturi sapiente. Aperiam soluta et molestiae laborum, rerum magni?
-        ;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, amet minus suscipit harum veritatis distinctio ea, dicta perspiciatis cum culpa inventore, excepturi sapiente. Aperiam soluta et molestiae laborum, rerum magni?
-    </div> -->
 </div>

@@ -17,18 +17,18 @@ export class MainHeaderComponent implements OnInit {
       title: 'Popular Movies',
       url: '/movies-search'
     },
-    {
-      title: 'Celebrities List',
-      url: ''
-    },
-    {
-      title: 'Top Movies',
-      url: ''
-    },
-    {
-      title: 'News',
-      url: ''
-    }
+    // {
+    //   title: 'Celebrities List',
+    //   url: ''
+    // },
+    // {
+    //   title: 'Top Movies',
+    //   url: ''
+    // },
+    // {
+    //   title: 'News',
+    //   url: ''
+    // }
   ];
 
   isMenuOpened = false;
