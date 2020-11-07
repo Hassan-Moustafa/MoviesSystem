@@ -4,7 +4,8 @@
         class="form-control"
         [placeholder]="placeholder"
         [(ngModel)]="inputValue"
-        [maxlength]="inputMaxLength">
+        [maxlength]="inputMaxLength"
+        (keyup.enter)="search()">
     <div class="input-group-append">
         <span class="input-group-text search-btn" id="basic-addon2" (click)="search()">
             <span class="icon-search"></span>

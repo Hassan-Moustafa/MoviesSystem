@@ -5,12 +5,15 @@ import {
 } from "@angular/common/http";
 import { throwError, Observable, BehaviorSubject, of } from "rxjs";
 import { catchError, filter, take, switchMap } from "rxjs/operators";
+import { ConfigService } from './config.service';
 
 @Injectable()
 export class InterceptorService implements HttpInterceptor {
 
   
-  private token = "b6a37cdfe2a619f5f55b42d2424ec1fe";
+  constructor(private configService: ConfigService) {
+
+  }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -20,7 +23,7 @@ export class InterceptorService implements HttpInterceptor {
       });
     }
     req = req.clone({
-      params: req.params.append('api_key', this.token)
+      params: req.params.append('api_key', this.configService.token)
     });
 
     return next.handle(req);

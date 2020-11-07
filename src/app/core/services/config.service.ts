@@ -8,6 +8,7 @@ export class ConfigService {
 
   private _baseUrl: string;
   private _moviePosterBaseUrl: string;
+  private _token: string;
 
   private configFilePath = 'assets/config/configurations.json';
 
@@ -19,12 +20,17 @@ export class ConfigService {
     return this._moviePosterBaseUrl;
   }
 
+  get token() {
+    return this._token;
+  }
+
   constructor(private http: HttpClient) { }
 
   loadConfig() {
     return this.http.get(this.configFilePath).subscribe((res: IAppConfig) => {
       this._baseUrl = res.baseUrl;
       this._moviePosterBaseUrl = res.moviePosterBaseUrl;
+      this._token = res.token;
     })
   }
 }
@@ -32,4 +38,5 @@ export class ConfigService {
 interface IAppConfig {
   baseUrl: string;
   moviePosterBaseUrl: string;
+  token: string;
 }
