@@ -4,16 +4,16 @@
     }">
 
     <div class="card-info-container">
-        <div class="mainTitle">
+        <div class="mainTitle" *ngIf="movieCardData.mainTitle">
             {{movieCardData.mainTitle}}
         </div>
-        <div class="subTitle">
+        <div class="subTitle" *ngIf="movieCardData.subTitle">
             {{movieCardData.subTitle}}
         </div>
-        <div class="rating">
+        <div class="rating" *ngIf="movieCardData.rating">
             {{movieCardData.rating}} / 10
         </div>
-        <div class="visual-rating">
+        <div class="visual-rating" *ngIf="movieCardData.rating">
             <ngb-rating [(rate)]="movieCardData.rating" [readonly] = "true"></ngb-rating>
         </div>
         <div class="details-btn col-auto">

@@ -15,7 +15,6 @@ export class MovieCastListComponent implements OnInit {
 
   ngOnInit(): void {
     this.filterCastList(10);
-    console.log(this.filteredMovieCastList)
   }
 
   /**

@@ -18,7 +18,6 @@ export class MoviesSearchControllerComponent implements OnInit {
   movieName: string;
   isLoading = false;
   searchValue: string = '';
-
   maxStringLength: number = 30;
 
   
@@ -31,12 +30,13 @@ export class MoviesSearchControllerComponent implements OnInit {
     private uiService: UiService) { }
 
   ngOnInit(): void {
-    this.getMoviesList();
+    this.activatedRoute.queryParams.subscribe((queryParams) => {
+      this.getMoviesList();
+    })
   }
 
   getMoviesList() {
-    this.activatedRoute.queryParams.subscribe((queryParams) => {
-      let movieName = queryParams['movieName'];
+      let movieName = this.activatedRoute.snapshot.queryParams['movieName'];
       this.uiService.setSpinnerStatus(true);
       this.isLoading = true;
       if(movieName) {
@@ -46,7 +46,6 @@ export class MoviesSearchControllerComponent implements OnInit {
         this.movieName = '';
         this.getPopularMovies();
     }
-    })
   }
 
   getDefaultMoviePosterImage () {
